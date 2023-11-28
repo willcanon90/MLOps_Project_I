@@ -9,11 +9,9 @@ steam_games = pd.read_csv('../data/steam_games.csv')
 users_items = pd.read_csv('../data/users_items.csv')
 users_reviews = pd.read_csv('../data/users_reviews.csv')
 
-steam_games['item_id'] = steam_games['item_id'].astype(int)
-users_items['item_id'] = users_items['item_id'].astype(int)
-users_reviews['item_id'] = users_reviews['item_id'].astype(int)
-
 users_reviews['posted_year'] = users_reviews['posted_year'].astype(int)
+steam_games['item_id'] = steam_games['item_id'].astype(int)
+users_reviews['item_id'] = users_reviews['item_id'].astype(int)
 
 muestra_steam_games = steam_games.head(42000)
 muestra_users_items = users_items.head(42000)
@@ -155,7 +153,4 @@ def recommend_user(id: str):
 
 @app.get("/")
 def index():
-    return "Hola amigos "
-
-
-
+    return "Hola amigos!"
